@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0"
+	targetNamespace="http://cancela.conv.up.edu.br/ticket"
+	xmlns:tns="http://cancela.conv.up.edu.br/ticket"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="ticket">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="praca" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false"/>
+				<xs:element name="cancela" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false"/>
+				<xs:element name="dataHora" type="xs:dateTime" minOccurs="1" maxOccurs="1" nillable="false"/>
+				<xs:element name="tarifa" type="xs:double" minOccurs="1" maxOccurs="1" nillable="false"/>
+				<xs:element name="categoria" type="tns:categoria" minOccurs="1" maxOccurs="1" nillable="false"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="categoria">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="C1" />
+			<xs:enumeration value="C2" />
+			<xs:enumeration value="C3" />
+			<xs:enumeration value="C4" />
+			<xs:enumeration value="C5" />
+			<xs:enumeration value="C6" />
+			<xs:enumeration value="C7" />
+			<xs:enumeration value="C8" />
+			<xs:enumeration value="C9" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
+

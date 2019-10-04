@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:ticket xmlns:ns2="http://cancela.conv.up.edu.br/ticket">
+    <praca>P1</praca>
+    <cancela>Cancela1</cancela>
+    <dataHora>2019-09-27T20:08:37.949-03:00</dataHora>
+    <tarifa>44.8</tarifa>
+    <categoria>C5</categoria>
+</ns2:ticket>

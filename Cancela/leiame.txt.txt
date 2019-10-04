@@ -1,0 +1,54 @@
+﻿## Aplicativo de Coleta de dados de Pedágio Versão 1.0
+
+Esse aplicativo de coleta de dados realiza a emissão de "Ticket XML", procedimento conhecido como bilhetagem, com os dados de medição de veículos que trafegam em via pedagiada.
+
+#Funcionamento:
+
+- Ao passar pela cancela do pedágio, o tipo de veículo é identificado, automaticamente ou através de operadores no local, e o Ticket é gerado na pasta de nome "tickets".
+
+- O aplicativo lança no Ticket XML os seguitnes dados:
+	1 - Tipo da praço identificada como "Principal" ou "Auxiliar", pode-se utilizar a identificação desejada para realizar essa identificação.
+	2 - Identificação da cancela, pode-se utilizar a identificação desejada para realizar essa identificação.
+	3 - Data e hora do evento (momento em que o veículo cruzou a cancela).
+	4 - Categoria veicular, identificada como:
+		
+		C1("Automóvel, caminhonete e furgão"),
+		C2("Caminhão leve, ônibus, caminhão-trator e furgão"),
+		C3("Automóvel e caminhonete com semi-reboque"),
+		C4("Caminhão, caminhão-trator, caminhão-trator com semireboque e ônibus"),
+		C5("Automóvel e caminhonete com reboque"),
+		C6("Caminhão com reboque e caminhão-trator com semireboque"),
+		C7("Caminhão com reboque e caminhão-trator com semireboque"),
+		C8("Caminhão com reboque e caminhão-trator com semireboque"),
+		C9("Motocicletas, motonetas e bicicletas motorizadas");
+	
+	5 - Tarifa a ser paga pelo veículo de acordo com a categoria veicular:
+	
+		a) Para que a Tarifa seja adicionada ao Ticket, o sistema dispõe de interface no estilo "plugin" para que o valor seja preenchido pelo sistema de Gestão de Tarifa proprietário do Pedágio.
+		
+		b)Para que a tarifa seja adicionada no Ticket o "plugin" deve ser desenvolvido com as regras tarifárias desejadas.
+		
+# O sistema de bilhetam gera o Ticket independentemente de haver plugin para a Tarifa. 
+
+# Para executar o sistema Bilhetador, em cada cancela desejada, sega os passos: 
+	1 - Descompacte o programa de nome "cancela.zip" em um diretório sem espaços;
+	2 - Ajuste os valores dos parâmetros no arquivo run.bat conforme abaixo:
+
+			java -jar ticket-1.0.jar -pTIPO_PRACA -cNOME_CANCELA
+			
+	3 - TIPO_PRACA identifica se a praça é Principal ou Auxiliar;
+	4 - NOME_CANCELA identifica o nome da cancela. Não repita esse nome, identifique corretamente suas cancelas.
+	
+# Para executar o aplicativo, apenas abra a janela de comandos e execute o aplicativo run.bat
+# Após a execução confira a geração de arquivos XML na pasta tickets.
+
+### Contrato
+
+# O seu contrato de uso desse software permite apoio técnico para a instalação e execução de um técnico especializado. Os 3 primeiros chamados são gratuitos, os demais haverá cobrança pelos serviços prestados.
+
+# Para o desenvolvimento do Plugin de Tarifa, existe um projeto de apoio pré-desenvolvido. Solicite ao fabricante!
+# O plugin deve ter o nome de plugin-tarifa.jar e deve ser colocado, a qualquer momento, no diretório de plugins da aplicação.
+# Se a construção do plugin estiver correta, o sistema automaticamente passará a registrar no XML a tarifa disponibilizada pelo Plugin.
+
+# O seu contrato de uso desse software permite apoio técnico para o deenvolvimento do plugin. 
+Os 3 primeiros chamados são gratuitos, os demais haverá cobrança pelos serviços prestados.

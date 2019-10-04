@@ -1,0 +1,1 @@
+java -jar ticket-1.0.jar -pP1 -cCancela1

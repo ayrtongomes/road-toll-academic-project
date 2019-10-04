@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+<h:head>
+	<title>Teste JSF</title>
+</h:head>
+
+<h:body>
+
+	<h:form>
+
+		<p:messages autoUpdate="true" globalOnly="true" />
+		<p:growl autoUpdate="true" globalOnly="true" />
+
+		<p:panel header="Age test" style="width: 800px">
+			<p:panelGrid columns="3" styleClass="ui-panelgrid-blank">
+				<p:outputLabel for="birth" value="Birth date:" />
+				<p:calendar id="birth" value="#{someTestBean.birthDate}"
+					pattern="dd/MM/yyyy" mask="99/99/9999" />
+				<p:message for="birth" />
+			</p:panelGrid>
+			<f:facet name="footer">
+				<p:commandButton value="Verify your age" icon="fa fa-arrow-right"
+					action="#{someTestBean.verifyYourAge()}" update="@form" />
+			</f:facet>
+		</p:panel>
+		<br />
+			
+		<p:fieldset legend="Documentation">
+			<h1>Tecnologies...</h1>
+			<ul>
+				<li>JDK 1.8</li>
+				<li>JSF 2.3</li>
+				<li>JPA 2.1</li>
+				<li>WildFly 16</li>
+				<li>PrimeFaces 7.0</li>
+				<li>PrimeFaces Extensions 7.0</li>
+				<li>OmniFaces 3.3</li>
+				<li>FontAwesome 5.2.2 (PrimeFaces provide)</li>
+				<li>JUnit 4.12</li>
+				<li>Bean Validation</li>
+				<li>CDI 2.0</li>
+				<li>EL 3.0</li>
+				<li>JEE 8.0</li>
+				<li>Postgres JDBC Driver</li>
+				<li>JWT com Ninmus-JOSE</li>
+			</ul>
+			
+		</p:fieldset>	
+			
+					
+	</h:form>
+
+</h:body>
+</html>
